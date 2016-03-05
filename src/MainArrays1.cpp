@@ -9,7 +9,8 @@ int main(){
 	int len = removeArrayDuplicates(arr, 3);
 	printf("%d", len);
 	*/
-
+	int Arr[5] = { 10, 20, 30, 40, 50 }, lessCount, moreCount;
+	studentsCount(Arr, 5, 50, &lessCount, &moreCount);
 	//Test Students Count
 	/*
 	int arr2[3]={1,4,10};
