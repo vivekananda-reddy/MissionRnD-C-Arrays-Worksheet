@@ -22,5 +22,26 @@ struct student {
 };
 
 struct student ** topKStudents(struct student *students, int len, int K) {
-	return NULL;
+	int i, j;
+	struct student swap;
+	if (students == NULL || len<0|| K<1)
+	{
+		return NULL;
+	}
+	struct student **s = (struct student**)malloc(sizeof(struct student*)*K);
+	for (i = 0; i < K; i++)
+	{
+		for (j = i + 1; j < len; j++)
+		{
+			if (students[i].score < students[j].score)
+			{
+				swap = students[i];
+				students[i] = students[j];
+				students[j] = swap;
+			}
+		}
+		s[i] = &students[i];
+	}
+	return s;
+
 }
